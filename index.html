@@ -9,6 +9,8 @@
 		<script src="https://jspm.io/system@0.16.7.js"></script>
 		<script src="https://code.angularjs.org/2.0.0-alpha.20/angular2.dev.js"></script>
 
+		<script src="config.js"></script>
+
 	</head>
 
 	<body>
@@ -18,18 +20,6 @@
 	</body>
 
 	<script>
-
-		System.config({
-			traceurOptions: {
-				annotations: true,
-				memberVariables: true,
-				types: true
-			},
-			paths: {
-				'*': '*.js',
-				'angular2/*': 'angular2/*',
-			}
-		});
 
 		System.import('src/main');
 
