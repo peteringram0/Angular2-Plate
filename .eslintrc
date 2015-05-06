@@ -4,14 +4,16 @@
 		"es6": true // Enable ES6
 	},
 	"globals": {
-		"require": true // For gulp
+		"require": true,// For gulp
+		"@Component": true,
+		"@View": true,
+		"bootstrap": true
 	},
 	"ecmaFeatures": {
 		"modules": true // Enable ES6
 	},
 	"rules": {
 		"indent": [2, "tab"], // tabs only
-		"quotes":[2, "single", "avoid-escape"], // Single quote makes only
 		"brace-style": [2, "stroustrup", { "allowSingleLine": true }] // Open brackets need to be on the same line - not php style
 	}
 }
