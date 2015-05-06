@@ -1,4 +1,7 @@
 # Angular-Plate
+
+[ ![Codeship Status for peteringram0/Angular2-Plate](https://codeship.com/projects/ba7d7380-d63e-0132-8045-0ebaa675b5e0/status?branch=master)](https://codeship.com/projects/78306)
+
 Angular 2.0 ES6 Boilerplate.
 
 * Package management with JSPM
