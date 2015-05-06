@@ -4,9 +4,10 @@
 
 Angular 2.0 ES6 Boilerplate.
 
-* Package management with JSPM
+* Package management with JSPM & NPM
 * ES6 Module import with systemJS
-* More to come
+* ESLint for strict JS linting standards
+* Gulp for build compiling & linting
 
 ![alt tag](https://38.media.tumblr.com/tumblr_mb0zznFwl21r1mtsdo1_400.gif)
 
