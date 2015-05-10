@@ -3,25 +3,17 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Page title</title>
+
 		<script src="/jspm_packages/system.js"></script>
-		<!--<script src="../config.js"></script>-->
-		<!-- import a built version of Angular 2 -->
-		<!--<script src="https://code.angularjs.org/2.0.0-alpha.20/angular2.dev.js"></script>-->
+		<script src="https://code.angularjs.org/2.0.0-alpha.20/angular2.dev.js"></script>
+
 	</head>
 	<body>
 		<my-app></my-app>
 	</body>
+
 	<script>
-		System.paths = {
-			'angular2/*': './dist/vendor/angular/*.js',
-			'rtts_assert/*': './dist/vendor/rtts_assert/es6/src/*.js',
-			'app': 'app.js'
-		};
-		System.import('app')
-			.then(function (app) {
-				app.default();
-			}, function (e) {
-				console.error('Something terrible just happened...Open new issue at https://github.com/mgechev/angular2-seed', e);
-			});
+		System.import('main');
 	</script>
+
 </html>

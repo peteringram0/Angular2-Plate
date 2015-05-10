@@ -8,44 +8,41 @@
 var gulp = require('gulp'),
 	eslint = require('gulp-eslint'),
 	concat = require('gulp-concat'),
-	del = require('del');
+	del = require('del'),
+	shell = require('gulp-shell'),
+	traceur = require('gulp-traceur');
 
-/**
- * Define all settings for the build
- */
-var settings = {
-	sourceDir: './src/',
-	distDir: './dist/',
-	projectName: 'Angular2Plate'
-};
 
-/**
- * Compile all scripts
- */
-gulp.task('scripts', function() {
+var NG_PATH = './node_modules/angular2/es6/dev/';
+var RTT_PATH = './node_modules/rtts_assert/';
 
-	return gulp.src(settings.sourceDir + '**/*.js')
+gulp.task('build:ng', shell.task([
+		'npm install',
+		'./es5build.js -d ../../../../lib/angular'
+	], {
+		cwd: NG_PATH
+	})
+);
 
-		.pipe(eslint())
+gulp.task('build:rtts', shell.task([
+		'npm install',
+		'./es6/es5build.js -d ./../../lib/rtts_assert'
+	], {
+		cwd: RTT_PATH
+	})
+);
 
-		.pipe(eslint.format())
+gulp.task('build:angular', ['build:ng', 'build:rtts']);
 
-		.pipe(eslint.failAfterError())
-
-		.pipe(concat( settings.projectName + '.js' ))
-
-		.pipe(gulp.dest( settings.distDir ));
-
-});
-
-/**
- * Cleaning task - A tidy file is a tidy mind!
- */
-gulp.task('clean', function(cb) {
-
-	/**
-	 * Delete the JS file and css file created
-	 */
-	del([ settings.distDir ], cb);
-
+gulp.task('build', function () {
+	return gulp.src('./src/**/*.js')
+		.pipe(traceur({
+			sourceMaps: 'inline',
+			modules: 'instantiate',
+			annotations: true,
+			memberVariables: true,
+			typeAssertions: true,
+			types: true
+		}))
+		.pipe(gulp.dest('./dev'));
 });
