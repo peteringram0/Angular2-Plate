@@ -1,3 +1,4 @@
 .idea
 /jspm_packages
 /dist
+/typings
