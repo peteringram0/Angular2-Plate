@@ -6,17 +6,22 @@ Angular 2.0 ES6 Boilerplate.
 
 * Package management with JSPM & NPM
 * ES6 Module import with systemJS
-* ESLint for strict JS linting standards
-* Gulp for build compiling & linting
 
 ![alt tag](https://38.media.tumblr.com/tumblr_mb0zznFwl21r1mtsdo1_400.gif)
 
-Setup:
+Step 1: (Install dependencies)
 ```shell
-npm install jspm live-server -g
-cd Angular-Plate
+npm install jspm live-server tsd -g
 jspm install
+````
+
+Step 2: (Setup Angular TS definitions (will create 'typings' dir))
+```shell
+tsd query angular2 --action install
+````
+
+Step 3: (Watch for changes and open a new terminal and start live server)
+```shell
+tsc -w
 live-server
-
-```
-
+````
