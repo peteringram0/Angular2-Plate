@@ -2,7 +2,7 @@
 
 import {Component, View, bootstrap} from 'angular2/angular2';
 
-import {NameList} from 'dist/NameList';
+import {NameList} from './NameList';
 
 @Component({
     selector: 'my-app'
