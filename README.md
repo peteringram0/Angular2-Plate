@@ -11,7 +11,7 @@ Angular 2.0 ES6 Boilerplate.
 
 Step 1: (Install dependencies)
 ```shell
-npm install jspm live-server tsd -g
+npm install jspm live-server tsd typescript@^1.5.0-beta -g
 jspm install
 ````
 
