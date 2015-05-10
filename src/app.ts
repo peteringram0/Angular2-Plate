@@ -5,10 +5,10 @@ import {Component, View, bootstrap} from 'angular2/angular2';
 import {NameList} from 'dist/NameList';
 
 @Component({
-  selector: 'my-app'
+    selector: 'my-app'
 })
 @View({
-        template: '<h1>Hello {{ name }}</h1> <input (keyup)="changeName(namebox.value)" #namebox value="{{name}}">'
+    template: '<h1>Hello {{ name }}</h1> <input (keyup)="changeName(namebox.value)" #namebox value="{{name}}">'
 })
 // Component controller
 class MyAppComponent {
